@@ -9,8 +9,9 @@ export platform=""
 
 export myModules=${platform}"/gpfs/hps3/nos/noscrub/nwprod/csdlpy-1.5.1"
 export pythonCode=${platform}"/gpfs/hps3/nos/noscrub/nwprod/hsofs-preView-1.5.1/preview/pre.py"
-export logFile=${platform}"/gpfs/hps3/nos/noscrub/polar/metrics/metrics.log"
+export logFile=${platform}"/gpfs/hps3/nos/noscrub/polar/preview/preview.log"
 
+export aswipPath=${platform}"/gpfs/hps3/nos/noscrub/Yuji.Funakoshi/Dev-hsofs.v2.0.1/exec/hsofs_aswip"
 export stormID="al802018"
 export stormCycle="2018050712"
 export aDeck=${platform}"/gpfs/gp1/nhc/save/guidance/storm-data/zsurge/al182018/al802018.fst"
@@ -24,4 +25,4 @@ export ftpLogin="svinogradov@emcrzdm"
 export ftpPath="/home/www/polar/estofs/hsofs/preview/"
 
 cd ${tmpDir}
-PYTHONPATH=${myModules} ${pyPath}/python -W ignore ${pythonCode} -i ${stormID} -c ${stormCycle} -a ${aDeck} -b ${bDeck} -o ${outputDir} -t ${tmpDir} -p ${pltCfgFile} -u ${ftpLogin} -f ${ftpPath} # > ${logFile}
+PYTHONPATH=${myModules} ${pyPath}/python -W ignore ${pythonCode} -w ${aswipPath} -i ${stormID} -c ${stormCycle} -a ${aDeck} -b ${bDeck} -o ${outputDir} -t ${tmpDir} -p ${pltCfgFile} -u ${ftpLogin} -f ${ftpPath} # > ${logFile}
