@@ -36,6 +36,7 @@ def read_cmd_argv (argv):
 
     parser = argparse.ArgumentParser()
     
+    parser.add_argument('-w','--aswipPath',      required=True)
     parser.add_argument('-i','--stormID',        required=True)
     parser.add_argument('-c','--stormCycle',     required=True)
     parser.add_argument('-a','--aDeck',          required=True)    
